@@ -1,0 +1,13 @@
+#ctr-loading{
+    height:100vh;
+    background:linear-gradient(45deg,orangered,orange,yellow);
+    width:100%;
+
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ctr-loading img{
+    height:100px;
+}
