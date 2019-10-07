@@ -2,6 +2,8 @@ import React,{Component, Fragment} from "react";
 
 import "../assets/css/SearchInput.css";
 import Loading from "../components/global/Loading";
+import User from "../components/User";
+
 class SearchInput extends Component{
     constructor(props){
         super(props);
@@ -9,7 +11,8 @@ class SearchInput extends Component{
             value:"",
             data:null,
             clicked:false,
-            loading:false
+            loading:false,
+            errors:[false]
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -30,7 +33,14 @@ class SearchInput extends Component{
                 });
             }
         }catch(error){
-            console.log(error);
+            if(error.message.toLowerCase()==="failed to fetch"){
+                console.log("Fallo en la conexion: ",error);
+            }else if(error.message.toLowerCase()==="not found"){
+                console.log("No se encontro: ",error);
+            }
+            this.setState({
+                loading:false
+            });
         }
 
 
@@ -67,8 +77,17 @@ class SearchInput extends Component{
 
         if(loading){
             cont = <Loading/>;
-       }else{
-            cont = <div id="ctr-search_input">
+       }else if(!loading && data!==null){
+            cont =  <div id="ctr-search_input">
+                        <form id="search_input-form" action="">
+                            <input type="text" name="search-input" id="search-input" onChange={this.handleChange}/>
+                            <input type="button" id="search-btn" value="Search" onClick={this.handleClick}/>
+                        </form>   
+                        <User user={data!==null? data: {name:null}}/>
+                    </div>;
+                
+       }else if(!loading && data ===null){
+             cont = <div id="ctr-search_input">
                         <form id="search_input-form" action="">
                             <input type="text" name="search-input" id="search-input" onChange={this.handleChange}/>
                             <input type="button" id="search-btn" value="Search" onClick={this.handleClick}/>
