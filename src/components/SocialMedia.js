@@ -17,10 +17,10 @@ const SocialMedia = (props) =>{
                 <a target="_blank" href="https://www.linkedin.com/in/vidal-leonardo-de-los-santos-rincon-314644185/">
                     <img id="linkedin" src={inIcon} alt=""/>
                 </a>
-                <a target="_blank" href="">
+                <a href="#">
                     <img src={fbIcon} alt=""/>
                 </a>
-                <a target="_blank" href="">
+                <a target="_blank" href="https://www.youtube.com/channel/UCnCjc75kD9IBLjsL4Yb0wcQ">
                     <img src={ytIcon} alt=""/>
                 </a>
             </div>
