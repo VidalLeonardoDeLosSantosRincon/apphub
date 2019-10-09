@@ -1,0 +1,22 @@
+
+.ctr-social_media {
+    background: white;
+    padding:5px 10px;
+    width:200px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+.ctr-social_media a img{
+    height: 35px;
+    width: 35px;
+}
+
+.ctr-social_media a #linkedin{
+    height: 45px;
+    width: 45px;
+}
