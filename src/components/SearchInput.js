@@ -88,7 +88,7 @@ class SearchInput extends Component{
                 
        }else if(!loading && data ===null){
              cont = <div id="ctr-search_input">
-                        <form id="search_input-form" action="">
+                        <form id="search_input-form" onSubmit={(e)=>{e.preventDefault()}}>
                             <input type="text" name="search-input" id="search-input" onChange={this.handleChange}/>
                             <input type="button" id="search-btn" value="Search" onClick={this.handleClick}/>
                         </form>

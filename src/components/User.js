@@ -9,9 +9,11 @@ const User = (props) => {
     return(
         <Fragment>
             <div className="ctr-user">
-                <a target="_blank" href={user.html_url}>
-                    <img src={user.avatar_url} alt=""/>
-                </a>
+                <div id="user-img-box">
+                    <a target="_blank" href={user.html_url}>
+                        <img src={user.avatar_url} alt=""/>
+                    </a>
+                </div>
                 <div id="user-info">
                     <span>Nombre: {
                         user.name!==null? user.name: "No suministrado"
